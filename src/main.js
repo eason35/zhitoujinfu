@@ -6,8 +6,8 @@ import store from './store'
 
 
 new Vue({
-  router,
-  store,
-  render: h => h(App),
   
+  render: h => h(App),
+  router,
+  store
 }).$mount('#app')
