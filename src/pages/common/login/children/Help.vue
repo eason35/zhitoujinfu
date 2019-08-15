@@ -1,6 +1,6 @@
 <template>
      <div class="page subpage">
-         <app-header title="常见问题" left="back" :backAction="handleback"/>
+         <app-header title="常见问题" left="back" :leftAction="handleback"/>
          <ul class="help-list">
              <li class="help-item">
                 <h3>1、忘记密码</h3>
