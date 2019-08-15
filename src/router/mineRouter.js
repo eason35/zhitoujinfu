@@ -4,23 +4,17 @@ export default {
     children:[
         // 实名认证
         {
-            path:'authentication',
-            component:()=>import('../pages/Mine/children/Authentication.vue'),
-            children:[
-                {
-                    path:'submit',
-                    component:()=>import('../pages/Mine/children/AuthenticationPass.vue')
-                }
-            ]
+            path:'realname',
+            component:()=>import('../pages/Mine/RealName/RealName.vue')
         },
         // 信息
         {
             path:'message',
-            component:()=>import('../pages/Mine/children/Message.vue'),
+            component:()=>import('../pages/Mine/Message/Message.vue'),
             children:[
                 {
                     path:'detail/:list_id',
-                    component:()=>import('../pages/Mine/children/MessageDetail.vue')
+                    component:()=>import('../pages/Mine/Message/MessageDetail.vue')
                 }
             ]
         },
@@ -28,22 +22,22 @@ export default {
         {
             // 资产
             path:'property',
-            component:()=>import('../pages/Mine/children/Property.vue'),
+            component:()=>import('../pages/Mine/Property/Property.vue'),
             children:[
                 {
                     // 账单
                     path:'bill',
-                    component:()=>import('../pages/Mine/children/Bill.vue')
+                    component:()=>import('../pages/Mine/Property/Bill.vue')
                 },
                 {
                     // 提现
                     path:'withdrawal',
-                    component:()=>import('../pages/Mine/children/Withdrawal.vue')
+                    component:()=>import('../pages/Mine/Property/Withdrawal.vue')
                 },
                 {
                     // 充值
                     path:'recharge',
-                    component:()=>import('../pages/Mine/children/Recharge.vue')
+                    component:()=>import('../pages/Mine/Property/Recharge.vue')
                 }
             ]
         }

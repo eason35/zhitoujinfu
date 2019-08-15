@@ -1,6 +1,8 @@
 <template>
     <div class="myheader">
-         <div class="left" v-if="left" @click="leftAction">{{left}}</div>
+         <div class="left" v-if="left" @click="leftAction">
+             <img :src="left" alt="">
+         </div>
          <div class="title" v-if="title">{{title}}</div>
          <div class="right" v-if="right" @click="rightAction">{{right}}</div>
     </div>
@@ -29,19 +31,24 @@ export default {
         top:0;
         height:1.1733rem;
         width:100%;
-        background:#f1f1f1;
+        background:#fff;
         color:#333;
         font-size:0.4533rem;
         .left{
             position:absolute;
-            line-height:1.1733rem;
-            left:0.1333rem;
+            margin-top: 0.3333rem;
+            left:0.5467rem;
+            width: 0.2933rem;
+            height: 0.5067rem;
+            img{
+                width: 100%;
+            }
         }
         .right{
             top:0;
             position:absolute;
             line-height:1.1733rem;
-            right:0.1333rem;
+            right:0.5467rem;
         }
         .title{
             text-align:center;

@@ -1,12 +1,12 @@
 <template>
-  <div>
-      <h1>实名认证通过</h1>
+  <div class="page subpage">
+      <h1>账单</h1>
   </div>
 </template>
 
 <script>
 export default {
-    name:'authentication-pass'
+    name:"bill"
 }
 </script>
 

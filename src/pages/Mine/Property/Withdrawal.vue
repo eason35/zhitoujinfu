@@ -1,12 +1,12 @@
 <template>
-  <div>
-      <h1>资产构成</h1>
+  <div  class="page subpage">
+      <h1>提现</h1>
   </div>
 </template>
 
 <script>
 export default {
-    name:'property'
+    name:'withdrawal'
 }
 </script>
 
