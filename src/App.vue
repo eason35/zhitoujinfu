@@ -12,16 +12,15 @@
     </div>
 </template>
 <script>
-import store from './store'
+
+
 import {mapState} from 'vuex';
-import Home from "./pages/Home/Home"
-import Manage from './pages/ManageMoney/Manage'
-import Mine from './pages/Mine/Mine'
+
 import Login from './pages/common/Login'
-import TabBar from './pages/components/Tabbar'
+import TabBar from './components/Tabbar'
 export default {
     components:{
-        [Home.name]:Home,
+
         [Login.name]:Login,
         [TabBar.name]:TabBar
     },
