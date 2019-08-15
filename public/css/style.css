@@ -1,0 +1,16 @@
+body,html{
+    height:100%;
+    width:100%;
+}
+.page{
+    position: absolute;
+    left:0;
+    width:100%;
+    top:0;
+    bottom:49px;
+    background:#fefefe;
+}
+.subpage{
+    bottom:0;
+    z-index:10;
+}

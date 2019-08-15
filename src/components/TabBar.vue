@@ -1,8 +1,9 @@
 <template>
     <nav class="tab-bar">
         <template v-for="item in list">
-            <router-link class="tab-item" :key="item.id" :to="item.path">
+            <router-link class="tab-item"  :key="item.id" :to="item.path">
                 <span>{{item.name}}</span>
+                
             </router-link>
         </template>
     </nav>
