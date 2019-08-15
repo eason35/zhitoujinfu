@@ -1,8 +1,8 @@
 <template>
     <div class="myheader">
-         <div class="left" v-if="left" @click="backAction">{{left}}</div>
+         <div class="left" v-if="left" @click="leftAction">{{left}}</div>
          <div class="title" v-if="title">{{title}}</div>
-         <div class="right" v-if="right">{{right}}</div>
+         <div class="right" v-if="right" @click="rightAction">{{right}}</div>
     </div>
 </template>
 
@@ -16,7 +16,8 @@ export default {
         },
         left:String,
         right:String,
-        backAction:Function
+        leftAction:Function,
+        rightAction:Function
     }
 }
 </script>
