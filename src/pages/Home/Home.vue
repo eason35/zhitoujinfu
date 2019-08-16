@@ -1,5 +1,6 @@
 <template>
-    <div class="page" id="home">
+      <div>
+          <div class="page" id="home">
         <app-swiper class="banner">
             <app-swiper-item><img src="/images/home/home_banner.png"/></app-swiper-item>
             <app-swiper-item><img src="/images/home/home_banner.png"/></app-swiper-item>
@@ -9,15 +10,15 @@
             <div class="days"><img src="/images/home/home_anquan.png"/><span>平台已经合规运营<i class="blueword">1</i>年<i class="blueword">206</i>天</span></div>
             <div class="totaldata">
 
-                <div class="showdata">
+                <div class="showdata" @click="toInfo">
                     <p><span>530</span>亿+</p>
                     <p>累计总交易额(元)</p>
                 </div>
-                <div class="showdata">
+                <div class="showdata" @click="toInfo">
                     <p><span>758</span>万+</p>
                     <p>累计注册用户(人)</p>
                 </div>
-                <div class="showdata">
+                <div class="showdata" @click="toInfo">
                     <p><span>12</span>亿+</p>
                     <p>累计为用户赚取(元)</p>
                 </div>
@@ -44,6 +45,8 @@
 
         <div class="explain">历史参考扣费利率不代表实际利率</div>
     </div>
+        <router-view></router-view>
+      </div>
 </template>
 
 <script>
@@ -53,6 +56,11 @@ export default {
     components:{
         [swiper.name]:swiper,
         [swiperItem.name]:swiperItem
+    },
+    methods:{
+        toInfo(){
+            this.$router.push('/home/info')
+        }
     }
 }
 </script>
