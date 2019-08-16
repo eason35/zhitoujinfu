@@ -14,7 +14,7 @@
 
 import {mapState} from 'vuex';
 import Login from './pages/common/login/Login'
-import TabBar from './components/Tabbar'
+import TabBar from './components/TabBar'
 export default {
     components:{
         [TabBar.name]:TabBar,

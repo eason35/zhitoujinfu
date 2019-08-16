@@ -1,16 +1,17 @@
-body,html{
+body,html,.app{
     height:100%;
     width:100%;
+    font-family: 'PingFangSC-Regular';
 }
 .page{
     position: absolute;
     left:0;
     width:100%;
     top:0;
-    bottom:49px;
+    bottom:1.3067rem;
     background:#fefefe;
 }
-.subpage{
+.page.subpage{
     bottom:0;
     z-index:10;
 }

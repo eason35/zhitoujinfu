@@ -7,11 +7,15 @@ import mineRouter from './mineRouter'
 import loginRouter from './loginRouter'
 
 Vue.use(Router);
+
 const routes=[
     homeRouter,
     manageRouter,
     mineRouter,
-    loginRouter
+    {
+        path:'/',
+        redirect:'/home'
+    }
 ]
 export default new Router({
     mode:'history',
