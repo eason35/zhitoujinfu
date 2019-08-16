@@ -1,10 +1,10 @@
 <template>
-    <div class="myheader">
-         <div class="left" v-if="left" @click="leftAction">
+    <div class="myheader border-bottom">
+         <div class="left" v-if="left" @click="leftAction ? leftAction() : null">
              <img :src="left" alt="">
          </div>
          <div class="title" v-if="title">{{title}}</div>
-         <div class="right" v-if="right" @click="rightAction">{{right}}</div>
+         <div class="right" v-if="right" @click="rightAction ? rightAction() : null">{{right}}</div>
     </div>
 </template>
 
@@ -53,6 +53,9 @@ export default {
         .title{
             text-align:center;
             line-height:1.1733rem;
+            font-size:0.4533rem;
+            font-weight:bold;
+            color: #333;
         }
     }
 </style>

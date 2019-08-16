@@ -11,7 +11,6 @@
 
 <script>
 import {mapState} from 'vuex';
-import Header from '../../../components/Header';
 import NotRealName from './children/NotRealName';
 import RealNamePass from './children/RealNamePass';
 export default {
@@ -22,7 +21,6 @@ export default {
       }
     },
     components:{
-      [Header.name]:Header,
       [RealNamePass.name]:RealNamePass,
       [NotRealName.name]:NotRealName
     },
