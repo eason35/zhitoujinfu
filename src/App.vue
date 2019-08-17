@@ -4,7 +4,9 @@
          <!-- 登陆页面 -->
         
 
-        <router-view></router-view>
+        <!-- <transition enter-active-class="slideInRight" leave-active-class="slideOutRight"> -->
+            <router-view></router-view>
+        <!-- </transition> -->
 
          <!-- tab-bar -->   
          <tab-bar/> 

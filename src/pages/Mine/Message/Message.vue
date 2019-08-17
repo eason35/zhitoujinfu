@@ -1,6 +1,6 @@
 <template>
-<div>
-  <div class="page subpage" id="message">
+<div class="page subpage">
+  <div id="message">
       <app-header title="消息" :left="iconUrl" :leftAction="()=>this.$router.go(-1)"/>
       <app-scroll class="content">
         <ul class="announcement">
@@ -49,7 +49,9 @@
         </ul>
       </app-scroll>
   </div>
-  <router-view></router-view>
+  <transition enter-active-class="slideInRight" leave-active-class="slideOutRight">
+    <router-view></router-view>
+  </transition>
   </div>
 </template>
 

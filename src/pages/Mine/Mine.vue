@@ -13,7 +13,7 @@
                 <img src="/images/mine/vip.png" alt />
               </i>
             </div>
-            <router-link to="/mine/realname" class="real-name">未实名认证</router-link>
+            <router-link to="/mine/realname" class="real-name">实名认证</router-link>
           </div>
           <div class="head-right">
             <span class="service">
@@ -52,7 +52,9 @@
       </ul>
       <div class="loginout">退出登录</div>
     </div>
-    <router-view></router-view>
+    <transition enter-active-class="slideInRight" leave-active-class="slideOutRight">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 

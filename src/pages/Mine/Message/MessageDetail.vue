@@ -38,6 +38,7 @@ export default {
     padding: 0 0.4933rem;
     font-size: 0.2933rem;
     line-height: 0.6667rem;
+    box-sizing: border-box;
     .title{
       font-size: 0.4rem;
       line-height: 0.9333rem;
