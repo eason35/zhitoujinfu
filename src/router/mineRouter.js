@@ -13,7 +13,7 @@ export default {
             component:()=>import('../pages/Mine/Message/Message.vue'),
             children:[
                 {
-                    path:'detail/:list_id',
+                    path:'detail/:message_id',
                     component:()=>import('../pages/Mine/Message/MessageDetail.vue')
                 }
             ]

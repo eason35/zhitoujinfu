@@ -1,9 +1,10 @@
 <template>
-  <div class="page subpage" id="message">
+<div class="page subpage">
+  <div id="message">
       <app-header title="消息" :left="iconUrl" :leftAction="()=>this.$router.go(-1)"/>
       <app-scroll class="content">
         <ul class="announcement">
-          <li class="announcement-item">
+          <li class="announcement-item" @click="goMessageDetail()">
             <div class="title">互动圈升级维护公告</div>
             <div class="time">2019-07-18 14:00</div>
             <div class="pic">
@@ -48,20 +49,23 @@
         </ul>
       </app-scroll>
   </div>
+  <transition enter-active-class="slideInRight" leave-active-class="slideOutRight">
+    <router-view></router-view>
+  </transition>
+  </div>
 </template>
 
 <script>
-import Header from '../../../components/Header';
-import AppSrcoll from '../../../components/AppSrcoll';
 export default {
     name:'message',
-    components: {
-      [Header.name]:Header,
-      [AppSrcoll.name]:AppSrcoll
-    },
     data () {
       return {
         iconUrl:"/images/back.png",
+      }
+    },
+    methods: {
+      goMessageDetail(){
+        this.$router.push('/mine/message/detail/1111')
       }
     }
 }

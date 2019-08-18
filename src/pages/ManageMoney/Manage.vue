@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div class="page" id="manage">
+    <div class="page" id="manage">
+        
+        <app-scroll class='content'>
         <ul class="manage-title">
             <li class="title-item" v-for="item in titleList" :key="item.id">
                 <router-link :to="item.path">
@@ -9,7 +11,8 @@
                 </router-link>
             </li>
         </ul>
-        <div class="big-title"><img src="/images/manage/fire.png" alt=""/><span>高人气</span></div>
+         
+         <div class="big-title"><img src="/images/manage/fire.png" alt=""/><span>高人气</span></div>
         <div class="hot">
              <p class="plan">新手专享15天授权方案<span>限购一次</span><i>即转及到</i></p>
              <div class="big-word">
@@ -62,7 +65,8 @@
                      <div :class="item.tender==='已满标'?'tenderfill':'tendernow'">{{item.tender}}</div>
                 </div>
             </div>
-        </div>  
+        </div> 
+         </app-scroll>
     </div>
 
     <router-view></router-view>
@@ -97,6 +101,11 @@ export default {
     #manage{
         box-sizing:border-box;
         padding:0 0.56rem;
+        .content{
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
         .manage-title{
             display:flex;
             justify-content:space-between;
@@ -297,6 +306,7 @@ export default {
                     }
                 }
             }
+        }
         }
     }
 </style>
