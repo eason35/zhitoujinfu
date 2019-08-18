@@ -1,4 +1,28 @@
 export default {
     path:'/manage',
-    component:()=>import('../pages/ManageMoney/Manage')
+    component:()=>import('../pages/ManageMoney/Manage'),
+    children:[
+        {
+            path:'biddingrecord',
+            component:()=>import('../pages/ManageMoney/BiddingRecord')
+        },
+        {
+            path:"description",
+            component:()=>import('../pages/ManageMoney/Description')
+        },
+        {
+            path:"novice",
+            component:()=>import('../pages/ManageMoney/Novice'),
+            children:[
+                {
+                    path:'bidnow/:money',
+                    component:()=>import('../pages/ManageMoney/children/BidNow')
+                }
+            ]
+        },
+        {
+            path:"agreements",
+            component:()=>import('../pages/ManageMoney/Agreements')
+        },
+    ]
 }

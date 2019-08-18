@@ -1,23 +1,47 @@
 <template>
     <div class="page subpage" id="info">
-        <app-header title="信息披露" left="back" :leftAction="handleback"/>
+        <app-header title="信息披露" :left="imgUrl" :leftAction="handleback"/>
         <div class="info-content border-top">
             <ul class="info-title">
                  <li @click="handleChange(index)" class="title-item" v-for="(item,index) in titleList" :key="item.id">{{item.name}}</li>
             </ul>
         </div>
+        <component :is="currentView"></component>
     </div>
 </template>
 
 <script>
 import AppHeader from '../../components/Header'
+import Matter from '../Home/Matter'
+import Record from '../Home/Record'
+import Business from '../Home/Business'
 export default {
     components:{
-        [AppHeader.name]:AppHeader
+        [AppHeader.name]:AppHeader,
+        [Matter.name]:Matter,
+        [Record.name]:Record,
+        [Business.name]:Business
+        
     },
     data(){
         return {
-            titleList:[{id:1,name:'备案信息'},{id:2,name:'经营信息'},{id:3,name:'重大事项'}]
+            titleList:[{id:1,name:'备案信息'},{id:2,name:'经营信息'},{id:3,name:'重大事项'}],
+            center:2,
+            imgUrl:'/images/home/back.png'
+        }
+    },
+    computed:{
+        currentView(){
+            switch (this.center) {
+                case 1:
+                   return 'record'
+                case 3:
+                    return 'matter'
+                case 2:
+                    return 'business'
+                default:
+                    return 'business'
+            }
         }
     },
     methods:{
@@ -39,6 +63,8 @@ export default {
                 newArr.push(...this.titleList.splice(0,1));
                 this.titleList=newArr;
             }
+            //当前，index为1的元素的id
+            this.center=this.titleList.filter((it,num)=>(num===1))[0].id;
         }
     },
     

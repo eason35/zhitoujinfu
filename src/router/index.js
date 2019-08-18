@@ -12,6 +12,7 @@ const routes=[
     homeRouter,
     manageRouter,
     mineRouter,
+    loginRouter,
     {
         path:'/',
         redirect:'/home'

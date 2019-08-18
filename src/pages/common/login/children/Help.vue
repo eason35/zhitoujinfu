@@ -1,6 +1,6 @@
 <template>
      <div class="page subpage">
-         <app-header title="常见问题" left="back" :leftAction="handleback"/>
+         <app-header title="常见问题" left="/images/home/back.png" :leftAction="handleback"/>
          <ul class="help-list">
              <li class="help-item">
                 <h3>1、忘记密码</h3>
@@ -31,6 +31,11 @@ import AppHeader from "../../../../components/Header"
 export default {
     components:{
         [AppHeader.name]:AppHeader
+    },
+    data(){
+        return {
+            imgUrl:'/images/home/back.png'
+        }
     },
     methods:{
         handleback(){

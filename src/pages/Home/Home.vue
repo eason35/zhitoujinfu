@@ -142,7 +142,7 @@ export default {
                 width:6.6667rem;
                 margin:0.1333rem auto;
                 // border:solid 1px #999;
-                box-shadow:0 0 0.04rem 0.04rem;
+                box-shadow:rgba(0,0,0,.2) 0 0.0133rem 0.2rem 0rem;
                 padding:0.2667rem;
                 text-align:center;
                 img{
