@@ -58,6 +58,8 @@
 
 <script>
 import Header from '../../../components/Header'
+import {get,post} from '../../../request'
+
 export default {
     name:'app-login',
     components:{
@@ -76,6 +78,10 @@ export default {
             isShow:true
         }
     },
+    created(){
+        //请求数据
+
+    },
     methods:{
         phoneBtnAction(){
            if(!(/^1[3456789]\d{9}$/.test(this.phone))){
@@ -83,14 +89,13 @@ export default {
            }else{
                 console.log('手机号格式对了');
                 this.hasPhone=true;
-                this.currentPhone=this.phone;
                 //将手机号发送到仓库，去请求发送验证码
-                
+               this.$store.dispatch('login/requestIsRegister',this.phone);
            }   
         },
         //获取验证码
         getCodeAction(){
-
+            this.$store.dispatch('login/requestCode',this.phone);
         },
         codeBtnAction(){
             console.log('code');
@@ -100,9 +105,8 @@ export default {
             this.code=""
         },
         passBtnAction(){
-            console.log('pass');
             //将phone和pass发送到仓库，去请求发送验证码
-            this.pass=""
+            this.$store.dispatch('login/requestLoginByPass',{"phone":this.phone,"pass":this.pass});
         },
         changeIsShow(){
             this.isShow=!this.isShow;

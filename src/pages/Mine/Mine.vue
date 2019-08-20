@@ -45,14 +45,17 @@
           </div>
           <div class="tips">平均1分钟赚取不足0.01元...努力啊！</div>
         </div>
-        <ul class="mine-list">
-          <li class="mine-item border-bottom" v-for="item in mineList" :key="item.id">
-            <i class="icon"><img :src="item.path" alt=""></i>
-            <span class="title">{{item.name}}</span>
-          </li>
-        </ul>
-        <div class="loginout">退出登录</div>
-      </app-scroll>
+        <div class="tips">平均1分钟赚取不足0.01元...努力啊！</div>
+      </div>
+      <ul class="mine-list">
+        <li class="mine-item border-bottom"
+          @click="()=>{$router.push(item.toPath)}"
+         v-for="item in mineList" :key="item.id">
+          <i class="icon"><img :src="item.path" alt=""></i>
+          <span class="title">{{item.name}}</span>
+        </li>
+      </ul>
+      <div class="loginout">退出登录</div>
     </div>
     <transition enter-active-class="slideInRight" leave-active-class="slideOutRight">
       <router-view></router-view>
@@ -65,10 +68,10 @@ export default {
   data () {
     return {
       mineList:[
-        {id:1,name:'投标',path:'/images/mine/bid.png'},
-        {id:2,name:'银行卡',path:'/images/mine/bankcard.png'},
-        {id:3,name:'密码管理',path:'/images/mine/password.png'},
-        {id:4,name:'三方账户绑定',path:'/images/mine/bind.png'},
+         {id:1,name:'投标',path:'/images/mine/bid.png',toPath:'/mine/tender'},
+        {id:2,name:'银行卡',path:'/images/mine/bankcard.png',toPath:'/mine/bankamericard'},
+        {id:3,name:'密码管理',path:'/images/mine/password.png', toPath:'/mine/password'},
+        {id:4,name:'三方账户绑定',path:'/images/mine/bind.png',toPath:'/mine/binding'},
       ]
     }
   }
