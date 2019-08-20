@@ -45,8 +45,6 @@
           </div>
           <div class="tips">平均1分钟赚取不足0.01元...努力啊！</div>
         </div>
-        <div class="tips">平均1分钟赚取不足0.01元...努力啊！</div>
-      </div>
       <ul class="mine-list">
         <li class="mine-item border-bottom"
           @click="()=>{$router.push(item.toPath)}"
@@ -56,6 +54,7 @@
         </li>
       </ul>
       <div class="loginout">退出登录</div>
+    </app-scroll> 
     </div>
     <transition enter-active-class="slideInRight" leave-active-class="slideOutRight">
       <router-view></router-view>
