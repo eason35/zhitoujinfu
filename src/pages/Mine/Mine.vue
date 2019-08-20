@@ -25,32 +25,34 @@
           </div>
         </div>
       </header>
-      <div class="property">
-        <div class="total-property">
-          <router-link to="/mine/property">
-            <p class="title">总资产(元)</p>
-            <p class="money"><span>0.00</span></p>
-          </router-link>
-        </div>
-        <div class="property-interest">
-          <div class="interest">
-            <p class="title">昨日利息(元)</p>
-            <p class="money">0.00</p>
+      <app-scroll class="mine-content content">
+        <div class="property">
+          <div class="total-property">
+            <router-link to="/mine/property">
+              <p class="title">总资产(元)</p>
+              <p class="money"><span>0.00</span></p>
+            </router-link>
           </div>
-          <div class="total-interest">
-            <p class="title">累计赚取(元)</p>
-            <p class="money">0.00</p>
+          <div class="property-interest">
+            <div class="interest">
+              <p class="title">昨日利息(元)</p>
+              <p class="money">0.00</p>
+            </div>
+            <div class="total-interest">
+              <p class="title">累计赚取(元)</p>
+              <p class="money">0.00</p>
+            </div>
           </div>
+          <div class="tips">平均1分钟赚取不足0.01元...努力啊！</div>
         </div>
-        <div class="tips">平均1分钟赚取不足0.01元...努力啊！</div>
-      </div>
-      <ul class="mine-list">
-        <li class="mine-item border-bottom" v-for="item in mineList" :key="item.id">
-          <i class="icon"><img :src="item.path" alt=""></i>
-          <span class="title">{{item.name}}</span>
-        </li>
-      </ul>
-      <div class="loginout">退出登录</div>
+        <ul class="mine-list">
+          <li class="mine-item border-bottom" v-for="item in mineList" :key="item.id">
+            <i class="icon"><img :src="item.path" alt=""></i>
+            <span class="title">{{item.name}}</span>
+          </li>
+        </ul>
+        <div class="loginout">退出登录</div>
+      </app-scroll>
     </div>
     <transition enter-active-class="slideInRight" leave-active-class="slideOutRight">
       <router-view></router-view>
@@ -135,6 +137,8 @@ export default {
       }
     }
   }
+  .mine-content{
+    top:1.5733rem;
   .property{
     margin: 0.7067rem 0.5333rem 0;
     background:rgba(31,125,253,1);
@@ -211,5 +215,7 @@ export default {
     padding: 0.3067rem 0 ;
     text-align: center;
   }
+  }
 }
+
 </style>
